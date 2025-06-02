@@ -1,0 +1,340 @@
+ 
+
+        .xpv-blueprint-holder {
+            position: relative;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .xpv-master-plan-img {
+            width: 100%;
+            height: auto;
+            max-height: 40vh;
+            object-fit: contain;
+            transition: filter 1s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .xpv-master-plan-img.xpv-vision-blocked {
+            filter: blur(12px) brightness(0.7);
+        }
+
+        .xpv-access-shield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(114, 30, 30, 0.8), rgba(42,82,152,0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(4px);
+        }
+
+        .xpv-access-shield.xpv-shield-disabled {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .xpv-unlock-trigger {
+            background: linear-gradient(45deg, #ff4757, #ff6b7a);
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(255,71,87,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .xpv-unlock-trigger:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 204, 204, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .xpv-unlock-trigger:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255,71,87,0.5);
+        }
+
+        .xpv-unlock-trigger:hover:before {
+            left: 100%;
+        }
+
+        .xpv-access-portal .modal-content {
+            border-radius: 25px;
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+
+        .xpv-portal-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            position: relative;
+        }
+
+        .xpv-portal-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .xpv-portal-title {
+            font-weight: 700;
+            font-size: 20px;
+            margin-top: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .xpv-close-portal {
+            filter: invert(1);
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .xpv-close-portal:hover {
+            opacity: 1;
+        }
+
+        .xpv-form-container {
+            padding: 35px;
+            background: #fafafa;
+        }
+
+        .xpv-input-group {
+            margin-bottom: 25px;
+        }
+
+        .xpv-field-label {
+            font-weight: 600;
+            color: #903d3d;
+            margin-bottom: 10px;
+            font-size: 15px;
+            display: block;
+        }
+
+        .xpv-data-input {
+            border-radius: 15px;
+            padding: 15px 20px;
+            border: 2px solid #e1e8ed;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 16px;
+            width: 100%;
+            background: white;
+        }
+
+        .xpv-data-input:focus {
+            border-color: #ed0909;
+            box-shadow: 0 0 0 3px #cd552d;
+            outline: none;
+            transform: translateY(-2px);
+        }
+
+        .xpv-data-input::placeholder {
+            color: #95a5a6;
+        }
+
+        .xpv-submit-control {
+            background: linear-gradient(45deg, #cd552d, #e57322);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 15px;
+            color: white;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .xpv-submit-control:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(174, 66, 39, 0.4);
+            background: linear-gradient(45deg, #cd552d, #e57322);
+        }
+
+        .xpv-success-notification {
+            background: linear-gradient(45deg, #d66d2b, #cc2e2e);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+            animation: slideInUp 0.5s ease;
+        }
+
+        .xpv-toast-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideInRight 0.5s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .xpv-wrapper-section {
+                padding: 2rem 1rem;
+            }
+            
+            .xpv-blueprint-holder {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .xpv-wrapper-section {
+                padding: 1.5rem 0.5rem;
+            }
+            
+            .xpv-blueprint-holder {
+                padding: 15px;
+                border-radius: 20px;
+            }
+            
+            .xpv-unlock-trigger {
+                font-size: 14px;
+                padding: 15px 25px;
+            }
+            
+            .xpv-portal-title {
+                font-size: 20px;
+            }
+            
+            .xpv-form-container {
+                padding: 25px;
+            }
+            
+            .xpv-master-plan-img {
+                max-height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .xpv-wrapper-section {
+                padding: 1rem 0.25rem;
+            }
+            
+            .xpv-blueprint-holder {
+                padding: 10px;
+                border-radius: 15px;
+            }
+            
+            .xpv-unlock-trigger {
+                font-size: 12px;
+                padding: 12px 20px;
+                letter-spacing: 0.5px;
+            }
+            
+            .xpv-portal-header {
+                padding: 10px 25px;
+            }
+            
+            .xpv-portal-title {
+                font-size: 20px;
+            }
+            
+            .xpv-form-container {
+                padding: 20px;
+            }
+            
+            .xpv-data-input {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            .xpv-submit-control {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+            
+            .xpv-toast-alert {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                right: 10px;
+            }
+        }
+
+        /* High DPI Displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .xpv-master-plan-img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+         .responsive-padding {
+    padding: 0px 80px;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-padding {
+      padding: 0px 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .responsive-padding {
+      padding: 0px 15px;
+    }
+  }
